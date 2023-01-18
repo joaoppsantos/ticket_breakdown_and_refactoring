@@ -8,4 +8,19 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
-## Your Explanation Here
+## Explanation
+
+&nbsp;
+
+- ### Removed nested conditional statements in order to have a more human and more structured view, at the moment, we can see the following conditions:
+
+  | if no event then early return TRIVIAL_PARTITION_KEY  
+   | if no partition key then create a partition key (using crypto dependency)  
+   | if partition key is not a string then stringify it  
+   | if partition key length is bigger than the maximum expected length (256) then digest the partition key
+
+  After all this, return partition key.
+
+&nbsp;
+
+- ### Replaced the concept of candidate for partitionKey (which already existed) in order for the developer to only require to have in consideration the concept of partitionKey which translates in less entropy.
