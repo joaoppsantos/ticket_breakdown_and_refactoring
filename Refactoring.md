@@ -14,12 +14,12 @@ You will be graded on the exhaustiveness and quality of your unit tests, the dep
 
 - ### Removed nested conditional statements in order to have a more human and more structured view, at the moment, we can see the following conditions:
 
-  | if no event then early return TRIVIAL_PARTITION_KEY  
-   | if no partition key then create a partition key (using crypto dependency)  
-   | if partition key is not a string then stringify it  
-   | if partition key length is bigger than the maximum expected length (256) then digest the partition key
+  > if **no event** then early **return TRIVIAL_PARTITION_KEY**  
+  > if **no partition key** then create a **partition key** (using crypto dependency)  
+  > if **partition key is not a string** then **stringify it**  
+  > if **partition key length is bigger than the maximum expected length** (256) then **digest the partition key**
 
-  After all this, return partition key.
+  After all this, **return partition key**.
 
 &nbsp;
 
